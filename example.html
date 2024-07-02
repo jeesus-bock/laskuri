@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <!-- 
+    This script section ought probbly be put inside the <head> elements.
+    It just fetches the count from the backend and injects it into an elements
+    with the id "counter".
+  --!>
+  <script>
+    document.body.onload = () => {
+      fetch('https://example.com/laskuri')
+        .then(response => response.json())
+        .then(body => {
+          const el = document.getElementById('counter')
+          el.innerHTML = body.count
+        })
+    }
+  </script>
+
+</head>
+<body>
+  <p>And here we have the page contents and whatnot, and we can put the visitor
+    count wherever, for example here <strong><span id="counter"></span></strong></p>
+</body>
+</html>
